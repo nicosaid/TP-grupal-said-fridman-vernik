@@ -26,7 +26,7 @@ public class ComidasScript : MonoBehaviour
     void Start()
     {
         panelcorrecto.SetActive(false);
-        panelincorrecto.SetActive(false)
+        panelincorrecto.SetActive(false);
         for (int i = 0; i < productos.Length; i++)
         {
             precios.Add(productos[i], Random.Range(1, 25));
@@ -48,11 +48,13 @@ public class ComidasScript : MonoBehaviour
         {
             //SceneManager.LoadScene(2); //si sale bien 
             Debug.Log("CORRECT");
+            panelcorrecto.SetActive(true);
         }
         else
         {
             //SceneManager.LoadScene(1); //si sale bien  
             Debug.Log("INCORRECT");
+            panelincorrecto.SetActive(true);
         }
         //SceneManager.LoadScene(1); //si sale mal 
         //SceneManager.LoadScene(2); //si sale bien
@@ -63,11 +65,13 @@ public class ComidasScript : MonoBehaviour
         {
             //SceneManager.LoadScene(2); //si sale bien 
             Debug.Log("CORRECT");
+            panelcorrecto.SetActive(true);
         }
         else
         {
             //SceneManager.LoadScene(1); //si sale bien  
             Debug.Log("INCORRECT");
+            panelincorrecto.SetActive(true);
         }
     }
     public void alcanzaJusto()
@@ -76,11 +80,13 @@ public class ComidasScript : MonoBehaviour
         {
             //SceneManager.LoadScene(2); //si sale bien 
             Debug.Log("CORRECT");
+            panelcorrecto.SetActive(true);
         }
         else
         {
             //SceneManager.LoadScene(1); //si sale bien  
             Debug.Log("INCORRECT");
+            panelincorrecto.SetActive(true);
         }
     }
     // Update is called once per frame
