@@ -4,5 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/comida.unity
+    guid: b167845b1c0e2604a87281adb4bd93f2
+  - enabled: 1
+    path: Assets/Scenes/notificaciones menu.unity
+    guid: 71d0062a527bc944faabcff6e9a65b84
   m_configObjects: {}

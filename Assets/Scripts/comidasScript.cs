@@ -2,20 +2,31 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class ComidasScript : MonoBehaviour
 {
     public GameObject[] productos;
     int productoRandom;
     GameObject producto;
+
     Dictionary<GameObject, int> precios = new Dictionary<GameObject, int>();
+
+    public Text randomPlataText;
     public Text txtPrecio1;
     public Text txtPrecio2;
+    public Text randomPlataText1;
+    int preciototal;
+    int plataTotal;
+    public GameObject panelcorrecto;
+    public GameObject panelincorrecto;
 
 
     // Start is called before the first frame update
     void Start()
     {
+        panelcorrecto.SetActive(false);
+        panelincorrecto.SetActive(false)
         for (int i = 0; i < productos.Length; i++)
         {
             precios.Add(productos[i], Random.Range(1, 25));
@@ -24,9 +35,54 @@ public class ComidasScript : MonoBehaviour
         txtPrecio1.text = precios[producto].ToString();
         Activate(269f, 138.6f, -313.9f);
         txtPrecio2.text = precios[producto].ToString();
+        preciototal = int.Parse(txtPrecio1.text) + int.Parse(txtPrecio2.text);
+        plataTotal = Random.Range(5, 25);
 
+        randomPlataText.text = plataTotal.ToString();
     }
 
+    public void alcanza()
+    {
+
+        if(preciototal > plataTotal)
+        {
+            //SceneManager.LoadScene(2); //si sale bien 
+            Debug.Log("CORRECT");
+        }
+        else
+        {
+            //SceneManager.LoadScene(1); //si sale bien  
+            Debug.Log("INCORRECT");
+        }
+        //SceneManager.LoadScene(1); //si sale mal 
+        //SceneManager.LoadScene(2); //si sale bien
+    }
+    public void NoAlcanza()
+    {
+        if (preciototal < plataTotal)
+        {
+            //SceneManager.LoadScene(2); //si sale bien 
+            Debug.Log("CORRECT");
+        }
+        else
+        {
+            //SceneManager.LoadScene(1); //si sale bien  
+            Debug.Log("INCORRECT");
+        }
+    }
+    public void alcanzaJusto()
+    {
+        if (preciototal == plataTotal)
+        {
+            //SceneManager.LoadScene(2); //si sale bien 
+            Debug.Log("CORRECT");
+        }
+        else
+        {
+            //SceneManager.LoadScene(1); //si sale bien  
+            Debug.Log("INCORRECT");
+        }
+    }
     // Update is called once per frame
     void Update()
     {
@@ -40,4 +96,5 @@ public class ComidasScript : MonoBehaviour
         producto = productos[productoRandom];
         Instantiate(producto, posicion, Quaternion.identity);
     }
+   
 }
