@@ -44,7 +44,7 @@ public class ComidasScript : MonoBehaviour
     public void alcanza()
     {
 
-        if(preciototal > plataTotal)
+        if( plataTotal>preciototal)
         {
             //SceneManager.LoadScene(2); //si sale bien 
             Debug.Log("CORRECT");
@@ -61,7 +61,7 @@ public class ComidasScript : MonoBehaviour
     }
     public void NoAlcanza()
     {
-        if (preciototal < plataTotal)
+        if (plataTotal<preciototal)
         {
             //SceneManager.LoadScene(2); //si sale bien 
             Debug.Log("CORRECT");
